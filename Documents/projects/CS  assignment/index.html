@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔐 Password Strength Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">🔐 Password Strength Analyzer</h1>
+            <p class="subtitle">Real-time analysis based on Entropy, Length & Dictionary Attacks</p>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="main-grid">
+            
+            <!-- Left Column: Input & Score -->
+            <div class="left-column">
+                
+                <!-- Password Input Section -->
+                <section class="input-section">
+                    <label for="password-input" class="input-label">Enter Password:</label>
+                    <div class="input-container">
+                        <input 
+                            type="password" 
+                            id="password-input" 
+                            class="password-input" 
+                            placeholder="Type your password here..."
+                            autocomplete="off"
+                        >
+                        <button id="toggle-visibility" class="toggle-btn" title="Show/Hide Password">
+                            <span id="eye-icon">👁️</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Overall Score Section -->
+                <section class="score-section">
+                    <div class="score-display">
+                        <h2 class="score-value" id="score-value">0/100</h2>
+                        <p class="score-status" id="score-status">Empty</p>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </section>
+
+                <!-- Tips Section -->
+                <section class="tips-section">
+                    <h3 class="tips-title">💡 Best Practices</h3>
+                    <ul class="tips-list">
+                        <li>Use 12-16+ characters</li>
+                        <li>Mix all character types</li>
+                        <li>Avoid common passwords</li>
+                        <li>Avoid patterns (123, abc)</li>
+                        <li>Use password manager</li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <!-- Right Column: Analysis Results -->
+            <div class="right-column">
+                <section class="analysis-section">
+            
+            <!-- Length Analysis -->
+            <div class="analysis-card">
+                <h3 class="card-title">📏 Length Analysis</h3>
+                <div class="card-content">
+                    <p class="status-text" id="length-status">Status: -</p>
+                    <p class="detail-text" id="length-detail">Enter a password to analyze</p>
+                </div>
+            </div>
+
+            <!-- Complexity Analysis -->
+            <div class="analysis-card">
+                <h3 class="card-title">🔤 Complexity Analysis</h3>
+                <div class="card-content">
+                    <p class="status-text" id="complexity-status">Status: -</p>
+                    <div class="complexity-indicators">
+                        <span class="indicator" id="ind-lowercase">
+                            <span class="indicator-icon">○</span> Lowercase
+                        </span>
+                        <span class="indicator" id="ind-uppercase">
+                            <span class="indicator-icon">○</span> Uppercase
+                        </span>
+                        <span class="indicator" id="ind-digits">
+                            <span class="indicator-icon">○</span> Digits
+                        </span>
+                        <span class="indicator" id="ind-special">
+                            <span class="indicator-icon">○</span> Special
+                        </span>
+                    </div>
+                    <p class="suggestion-text" id="complexity-suggestions"></p>
+                </div>
+            </div>
+
+            <!-- Entropy Analysis -->
+            <div class="analysis-card">
+                <h3 class="card-title">🎲 Entropy Analysis</h3>
+                <div class="card-content">
+                    <p class="detail-text" id="entropy-shannon">Shannon Entropy: 0 bits</p>
+                    <p class="detail-text" id="entropy-theoretical">Theoretical Entropy: 0 bits</p>
+                    <p class="detail-text" id="entropy-pool">Character Pool: 0</p>
+                    <p class="info-text">Higher entropy = more random/unpredictable</p>
+                </div>
+            </div>
+
+            <!-- Dictionary Attack Analysis -->
+            <div class="analysis-card">
+                <h3 class="card-title">📖 Dictionary Attack Analysis</h3>
+                <div class="card-content">
+                    <p class="status-text" id="dictionary-status">Status: -</p>
+                    <div class="warning-box" id="dictionary-warnings"></div>
+                </div>
+            </div>
+
+            <!-- Crack Time Estimation -->
+            <div class="analysis-card">
+                <h3 class="card-title">⏱️ Estimated Crack Time</h3>
+                <div class="card-content">
+                    <p class="detail-text" id="crack-time">Brute Force (1B attempts/sec): N/A</p>
+                    <p class="info-text">Time to crack using modern GPU</p>
+                </div>
+            </div>
+
+                </section>
+            </div>
+            
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🔒 All analysis is performed locally in your browser - no data is sent online</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
