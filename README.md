@@ -11,7 +11,6 @@ A beautiful, modern web-based password strength analyzer with **real-time analys
 - **Color-coded status** indicators
 - **Show/Hide password** toggle
 - **Responsive design** - works on all devices
-
 ### 📊 Analysis Metrics
 
 **1. Overall Score (0-100)**
