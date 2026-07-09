@@ -20,6 +20,7 @@ A beautiful, modern web-based password strength analyzer with **real-time analys
 - Visual progress bar with gradient colors
 - Status: Very Weak → Weak → Moderate → Strong → Very Strong
 
+
 **2. Length Analysis**
 - Real-time length checking
 - Recommendations for stronger passwords
